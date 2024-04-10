@@ -1,0 +1,240 @@
+:root {
+  --background: #000000;
+  --text: #ffffff;
+  --border: rgb(35, 35, 35);
+  --hover: rgb(139, 145, 255);
+  --menu-background: #000000;
+  --primaryColor: rgba(139, 145, 255);
+  --headerbg: rgba(0, 0, 0, 0.71);
+}
+.light-mode {
+  --background: #ffffff;
+  --text: #000000;
+  --border: rgb(208, 208, 208);
+  --hover: rgb(139, 145, 255);
+  --menu-background: #ffffff;
+  --primaryColor: rgba(139, 145, 255);
+  --headerbg: rgba(255, 255, 255, 0.71);
+  --scroll-thumb: rgb(0, 0, 0);
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  scrollbar-color: var(--scroll-thumb) var(--background);
+}
+
+body {
+  background-color: var(--background);
+  color: var(--text);
+  font-family: "Source Sans 3", sans-serif;
+  padding-top: 60px;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: var(--text);
+}
+header {
+  background-color: var(--headerbg);
+  position: fixed;
+
+  backdrop-filter: blur(15px);
+  top: 0;
+  width: 100%;
+  z-index: 999;
+  border-bottom: solid 2px var(--border);
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 60px;
+}
+
+.logo {
+  margin: 0px 10% 0px 1%;
+  font-size: 1.6rem;
+  letter-spacing: -1.5px;
+  font-weight: 600;
+  text-transform: uppercase;
+  justify-content: left;
+}
+
+.nav-list {
+  display: flex;
+  column-gap: 40px;
+}
+
+.nav-item {
+  padding: 10px 10px 10px 10px;
+  border-radius: 10px;
+  /* border: solid 2px transparent; */
+  /* box-shadow: 0px 2px 1px 0px inherit; */
+}
+
+.nav-item:hover {
+  transition: 0.7s;
+  /* background-color: var(--hover); */
+  /* border-bottom: solid 2px var(--hover); */
+  box-shadow: 0px 2px 1px 0px var(--primaryColor);
+}
+
+.settings {
+  margin: 0 1% 0px 0px;
+}
+
+main {
+  text-align: center;
+  margin-top: 25vh;
+  background-position-x: -40vw, 40vw;
+  background-position-y: 0, -15vh;
+  background-repeat: no-repeat;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: 10;
+}
+
+.main-content {
+  width: 70%;
+  margin: auto;
+  z-index: 9;
+  position: relative;
+}
+
+.background-effect {
+  background: radial-gradient(
+    circle,
+    var(--primaryColor) 0%,
+    var(--background) 60%
+  );
+  height: 100%;
+  width: 100%;
+  filter: blur(100px);
+  z-index: 0;
+  position: absolute;
+}
+
+h1 {
+  font-size: 10vw;
+  font-weight: bold;
+}
+
+.configs {
+  background-color: var(--menu-background);
+  position: fixed;
+  right: -166px;
+  display: inline-block;
+  height: 100vh;
+  width: 170px;
+  text-align: center;
+  transition: 0.5s;
+  /* filter: blur(5px); */
+  border-left: 4px solid var(--primaryColor);
+  box-shadow: 0px 0px 10px 0px var(--primaryColor);
+  z-index: 55;
+}
+
+.configs.open {
+  right: 0;
+  filter: blur(0px);
+  /* box-shadow: -4px 0px rgba(255, 255, 255, 0.2); */
+  box-shadow: 0px 0px 30px 0px var(--primaryColor);
+  border-left: 2px solid var(--primaryColor);
+  position: fixed;
+}
+
+.config-content ul li {
+  margin-top: 20px;
+}
+
+.cfg-btns {
+  padding: 10px 30% 10px 30%;
+}
+
+.logout:hover {
+  border: solid 1px rgb(156, 47, 47);
+}
+
+.btn-active {
+  background-color: var(--primaryColor);
+}
+/* 
+footer {
+  background-color: inherit;
+  width: 100%;
+  height: 10%;
+  bottom: 0;
+  position: absolute;
+  margin: auto;
+  border-top: 2px solid var(--border);
+  z-index: 999;
+  background-color: #000000;
+} */
+
+.cards-container {
+  width: 100%;
+  display: flex;
+  text-align: center;
+  margin: auto;
+  justify-content: space-around;
+  max-width: 80rem;
+  margin-top: 30vh;
+}
+
+.cards {
+  background-color: var(--headerbg);
+  border: solid 2px var(--border);
+  border-radius: 20px;
+  height: 20rem;
+  width: 20rem;
+  z-index: 10;
+}
+
+/* //////////////////// */
+
+.configs2 {
+  background-color: var(--menu-background);
+  position: fixed;
+  left: -166px;
+  display: inline-block;
+  height: 100vh;
+  width: 170px;
+  text-align: center;
+  transition: 0.5s;
+  /* filter: blur(5px); */
+  border-right: 4px solid var(--primaryColor);
+  box-shadow: 0px 0px 10px 0px var(--primaryColor);
+  z-index: 55;
+}
+
+.configs2.open2 {
+  left: 0;
+  filter: blur(0px);
+  box-shadow: 0px 0px 30px 0px var(--primaryColor);
+  border-right: 2px solid var(--primaryColor);
+  position: fixed;
+}
+
+@media screen and (max-width: 600px) {
+  .logo {
+    margin: 0px 1% 0px 2%;
+  }
+  .nav-list {
+    column-gap: 0px;
+  }
+  .nav-item {
+    padding: 10px 10px 10px 10px;
+  }
+  .nav-item:hover {
+    transition: 0.7s;
+    box-shadow: 0px 20px 5px -18px var(--primaryColor);
+  }
+}
